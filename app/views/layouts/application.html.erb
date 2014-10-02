@@ -7,9 +7,10 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
+
 $(document).ready(function() {
-  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-  $('.content').html($('.content').html().replace(exp,"<a href='$1' target='_blank'>$1</a>"));
+  var exp = /(\b(http?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  $('body').html($('body').html().replace(exp,"<a href='$1' target='_blank'>$1</a>"));
 });
 </script>
     <%= csrf_meta_tags %>
