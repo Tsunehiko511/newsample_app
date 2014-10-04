@@ -9,8 +9,11 @@
 <script>
 
 $(document).ready(function() {
-  var exp = /(\b(http?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-  $('body').html($('body').html().replace(exp,"<a href='$1' target='_blank'>$1</a>"));
+  
+  $('.content').each(function(){
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    $(this).html($(this).html().replace(exp,"<a href='$1' target='_blank'>$1</a>"));
+  });
 });
 </script>
     <%= csrf_meta_tags %>
@@ -28,3 +31,5 @@ $(document).ready(function() {
     </div>
   </body>
 </html>
+
+#$('.content').html($('.content').html().replace(exp,"<a href='$1' target='_blank'>$1</a>"));
