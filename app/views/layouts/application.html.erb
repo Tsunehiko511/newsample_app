@@ -17,17 +17,7 @@ $(document).ready(function() {
 });
 </script>
 
-<script>
-$(function(){
-  var flag = navigator.onLine;
-  if (flag === true) {
-    $('.connect').text('オンライン状態です');
-  } else {
-    $('.connect').text('オフライン状態です');
-  }
-})
- 
-</script>
+
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -38,6 +28,7 @@ $(function(){
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
+
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>

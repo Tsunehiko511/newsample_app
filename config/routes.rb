@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  get "/index" , :to => 'public#index'
 
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
