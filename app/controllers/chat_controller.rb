@@ -9,4 +9,9 @@ class ChatController < WebsocketRails::BaseController
 	  puts "call new_message: #{message}"
 	  broadcast_message :new_message, message
 	end
+
+	def now_user
+		puts "call new_message: #{message}"
+		broadcast_message :now_user,message
+	end
 end
