@@ -4,3 +4,25 @@
   Contact Ruby on Rails Tutorial about the sample app at the
   <a href="http://railstutorial.jp/contact">contact page</a>.
 </p>
+<h1>チャット Room</h1>
+<form class="form-horizontal">
+	<div class="form-group">
+	    <div class="col-sm-10">
+	      <span id="username" ><%= current_user.name %></span>
+	      <div id="now_users"  data-uri="<%= request.host %>:<%= request.port %>/websocket"></div>
+	    </div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="msgbody">メッセージ</label>
+	    <div class="col-sm-10">
+			<input type="text" class="form-control" id="msgbody" />
+	    </div>
+	</div>
+	<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	    	<input type="button" class="btn btn-primary" id="send" value="送信"/>	
+	    </div>
+	</div>
+</form>
+<div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket">
+</div>

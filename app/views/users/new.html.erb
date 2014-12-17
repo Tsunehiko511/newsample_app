@@ -7,7 +7,7 @@
     <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <span class="login_name"><%= f.text_field :name %></span>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -18,7 +18,7 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <span class="login"><%= f.submit "Create my account", class: "btn btn-large btn-primary" %></span>
     <% end %>
   </div>
 </div>
